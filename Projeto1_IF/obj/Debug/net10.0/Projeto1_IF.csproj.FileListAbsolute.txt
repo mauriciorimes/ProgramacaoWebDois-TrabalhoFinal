@@ -289,4 +289,5 @@ C:\Users\mauri\source\repos\Projeto1_IF\Projeto1_IF\obj\Debug\net10.0\Projeto1_I
 C:\Users\mauri\source\repos\Projeto1_IF\Projeto1_IF\obj\Debug\net10.0\Projeto1_IF.genruntimeconfig.cache
 C:\Users\mauri\source\repos\Projeto1_IF\Projeto1_IF\obj\Debug\net10.0\ref\Projeto1_IF.dll
 C:\Users\mauri\source\repos\Projeto1_IF\Projeto1_IF\bin\Debug\net10.0\efpt.config.json
-C:\Users\mauri\source\repos\Projeto1_IF\Projeto1_IF\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\mauri\source\repos\Projeto1_IF\Projeto1_IF\obj\Debug\net10.0\Projeto1_IF.sourcelink.json
+C:\Users\mauri\source\repos\Projeto1_IF\Projeto1_IF\obj\Debug\net10.0\compressed\fj8dq5oeu4-{0}-txcjaq1qlr-txcjaq1qlr.gz

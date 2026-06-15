@@ -1,0 +1,38 @@
+@* Maurício Rimes Vieira *@
+@model Projeto1_IF.Models.TbPaciente
+
+@{
+    ViewData["Title"] = "Excluir Paciente";
+}
+
+<h1>Excluir Paciente</h1>
+
+<h3>Tem certeza que deseja excluir este paciente?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nome)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Cpf)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Cpf)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Rg)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Rg)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataNascimento)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DataNascimento)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Sexo)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Sexo)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Profissao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Profissao)</dd>
+    </dl>
+
+    <form asp-action="Delete" asp-route-id="@Model.IdPaciente">
+        <input type="hidden" asp-for="IdPaciente" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-link">Voltar à Lista</a>
+    </form>
+</div>

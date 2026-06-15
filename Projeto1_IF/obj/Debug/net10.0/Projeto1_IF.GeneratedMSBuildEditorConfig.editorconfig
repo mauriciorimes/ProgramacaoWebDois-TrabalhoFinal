@@ -227,6 +227,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJhbGltZW50b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/TbPacientes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJQYWNpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/TbPacientes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJQYWNpZW50ZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/TbPacientes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJQYWNpZW50ZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/TbPacientes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJQYWNpZW50ZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/TbPacientes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJQYWNpZW50ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
