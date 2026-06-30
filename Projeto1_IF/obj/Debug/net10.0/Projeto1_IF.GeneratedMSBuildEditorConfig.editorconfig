@@ -195,6 +195,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/MeuCadastro/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWV1Q2FkYXN0cm9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/MeuCadastro/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWV1Q2FkYXN0cm9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Profissionais/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFpc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Profissionais/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFpc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Profissionais/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFpc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Profissionais/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -205,26 +229,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Tbalimentos/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJhbGltZW50b3NcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Tbalimentos/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJhbGltZW50b3NcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Tbalimentos/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJhbGltZW50b3NcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Tbalimentos/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJhbGltZW50b3NcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/Tbalimentos/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGJhbGltZW50b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mauri/source/repos/Projeto1_IF/Projeto1_IF/Views/TbPacientes/Create.cshtml]

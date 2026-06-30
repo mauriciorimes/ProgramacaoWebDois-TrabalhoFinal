@@ -1,0 +1,38 @@
+@* Maurício Rimes Vieira *@
+@model Projeto1_IF.Models.TbProfissional
+
+@{
+    ViewData["Title"] = "Meu Cadastro";
+}
+
+<h1>Meu Cadastro</h1>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nome)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Cpf)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Cpf)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CrmCrn)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.CrmCrn)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Especialidade)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Especialidade)</dd>
+
+    <dt class="col-sm-3">Endereço</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Logradouro), @Html.DisplayFor(model => model.Numero) - @Html.DisplayFor(model => model.Bairro)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Cidade)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Cidade)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Cep)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Cep)</dd>
+
+    <dt class="col-sm-3">Telefone</dt>
+    <dd class="col-sm-9">(@Html.DisplayFor(model => model.Ddd1)) @Html.DisplayFor(model => model.Telefone1)</dd>
+</dl>
+
+<div>
+    <a asp-action="Edit" class="btn btn-primary">Editar meus dados</a>
+</div>

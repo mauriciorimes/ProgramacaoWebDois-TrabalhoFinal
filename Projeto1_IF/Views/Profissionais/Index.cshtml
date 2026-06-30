@@ -1,0 +1,42 @@
+@* Maurício Rimes Vieira *@
+@model IEnumerable<Projeto1_IF.Models.TbProfissional>
+
+@{
+    ViewData["Title"] = "Profissionais";
+}
+
+<h1>Profissionais</h1>
+<p class="text-muted">Você visualiza apenas os profissionais do seu escopo de gerência.</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Cpf)</th>
+            <th>@Html.DisplayNameFor(model => model.CrmCrn)</th>
+            <th>Plano</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cpf)</td>
+                <td>@Html.DisplayFor(modelItem => item.CrmCrn)</td>
+                <td>@item.IdContratoNavigation?.IdPlanoNavigation?.Nome</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.IdProfissional">Detalhes</a> |
+                    <a asp-action="Edit" asp-route-id="@item.IdProfissional">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdProfissional">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Nenhum profissional cadastrado no seu escopo.</div>
+}

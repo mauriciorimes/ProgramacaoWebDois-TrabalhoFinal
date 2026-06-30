@@ -37,4 +37,27 @@
         extension: "Por favor, informe um arquivo com extensão válida."
     });
 
+    // Ajuste de DATA para o formato brasileiro (dd/mm/aaaa).
+    $.validator.methods.date = function (value, element) {
+        var check = false;
+        var re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+        if (re.test(value)) {
+            var partes = value.split("/");
+            var dia = parseInt(partes[0], 10);
+            var mes = parseInt(partes[1], 10);
+            var ano = parseInt(partes[2], 10);
+            var data = new Date(ano, mes - 1, dia);
+            check = (data.getFullYear() === ano) &&
+                    (data.getMonth() === mes - 1) &&
+                    (data.getDate() === dia);
+        }
+        return this.optional(element) || check;
+    };
+
+    // Ajuste de NÚMERO para o formato brasileiro (ponto de milhar e vírgula decimal).
+    $.validator.methods.number = function (value, element) {
+        return this.optional(element) ||
+            /^-?(?:\d+|\d{1,3}(?:\.\d{3})+)(?:,\d+)?$/.test(value);
+    };
+
 }));

@@ -1,67 +1,157 @@
 @page
+@*  Maurício Rimes Vieira  *@
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Cadastro de Profissional";
 }
 
 <h1>@ViewData["Title"]</h1>
+<p>Cadastre-se como <strong>Médico</strong> ou <strong>Nutricionista</strong>.</p>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
-            <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
+
+            <h4>Tipo de profissional</h4>
+            <hr />
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input tipo-radio" type="radio" asp-for="Input.TipoProfissional" id="tipoMedico" value="Medico" />
+                    <label class="form-check-label" for="tipoMedico">Médico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input tipo-radio" type="radio" asp-for="Input.TipoProfissional" id="tipoNutri" value="Nutricionista" />
+                    <label class="form-check-label" for="tipoNutri">Nutricionista</label>
+                </div>
+                <span asp-validation-for="Input.TipoProfissional" class="text-danger d-block"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Input.IdPlano" class="form-label"></label>
+                <select asp-for="Input.IdPlano" id="planoSelect" class="form-select">
+                    <option value="">Selecione o tipo acima para ver os planos...</option>
+                    @foreach (var p in Model.Planos)
+                    {
+                        <option value="@p.Id" data-tipo="@p.Tipo">@p.Nome — R$ @p.Valor.ToString("F2")</option>
+                    }
+                </select>
+                <span asp-validation-for="Input.IdPlano" class="text-danger"></span>
+            </div>
+
+            <h4 class="mt-4">Dados de acesso</h4>
+            <hr />
+            <div class="mb-3">
+                <label asp-for="Input.Email" class="form-label"></label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="nome@exemplo.com" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Input.Password" class="form-label"></label>
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Input.ConfirmPassword" class="form-label"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
+
+            <h4 class="mt-4">Dados do profissional</h4>
             <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
+            <div class="mb-3">
+                <label asp-for="Input.Nome" class="form-label"></label>
+                <input asp-for="Input.Nome" class="form-control" />
+                <span asp-validation-for="Input.Nome" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Input.Cpf" class="form-label"></label>
+                    <input asp-for="Input.Cpf" class="form-control" />
+                    <span asp-validation-for="Input.Cpf" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Input.CrmCrn" class="form-label"></label>
+                    <input asp-for="Input.CrmCrn" class="form-control" />
+                    <span asp-validation-for="Input.CrmCrn" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Input.Especialidade" class="form-label"></label>
+                <input asp-for="Input.Especialidade" class="form-control" />
+                <span asp-validation-for="Input.Especialidade" class="text-danger"></span>
+            </div>
+
+            <h4 class="mt-4">Endereço e contato</h4>
+            <hr />
+            <div class="mb-3">
+                <label asp-for="Input.IdCidade" class="form-label"></label>
+                <select asp-for="Input.IdCidade" class="form-select" asp-items="Model.Cidades">
+                    <option value="">Selecione a cidade...</option>
+                </select>
+                <span asp-validation-for="Input.IdCidade" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Input.Logradouro" class="form-label"></label>
+                    <input asp-for="Input.Logradouro" class="form-control" />
+                    <span asp-validation-for="Input.Logradouro" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label asp-for="Input.Numero" class="form-label"></label>
+                    <input asp-for="Input.Numero" class="form-control" />
+                    <span asp-validation-for="Input.Numero" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label asp-for="Input.Cep" class="form-label"></label>
+                    <input asp-for="Input.Cep" class="form-control" />
+                    <span asp-validation-for="Input.Cep" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Input.Bairro" class="form-label"></label>
+                    <input asp-for="Input.Bairro" class="form-control" />
+                    <span asp-validation-for="Input.Bairro" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label asp-for="Input.Ddd1" class="form-label"></label>
+                    <input asp-for="Input.Ddd1" class="form-control" />
+                    <span asp-validation-for="Input.Ddd1" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Input.Telefone1" class="form-label"></label>
+                    <input asp-for="Input.Telefone1" class="form-control" />
+                    <span asp-validation-for="Input.Telefone1" class="text-danger"></span>
+                </div>
+            </div>
+
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Cadastrar</button>
+        </form>
     </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Exibe somente os planos correspondentes ao tipo de profissional escolhido.
+        (function () {
+            const planoSelect = document.getElementById("planoSelect");
+            const options = Array.from(planoSelect.options);
+
+            function filtrarPlanos() {
+                const tipo = document.querySelector(".tipo-radio:checked")?.value;
+                planoSelect.value = "";
+                options.forEach(op => {
+                    if (!op.value) return; // mantém o placeholder
+                    op.hidden = !tipo || op.dataset.tipo !== tipo;
+                });
+            }
+
+            document.querySelectorAll(".tipo-radio").forEach(r => r.addEventListener("change", filtrarPlanos));
+            filtrarPlanos();
+        })();
+    </script>
 }

@@ -18,6 +18,7 @@
             <th>@Html.DisplayNameFor(model => model.Rg)</th>
             <th>@Html.DisplayNameFor(model => model.DataNascimento)</th>
             <th>@Html.DisplayNameFor(model => model.Sexo)</th>
+            <th>Cidade</th>
             <th>@Html.DisplayNameFor(model => model.TelCelular)</th>
             <th></th>
         </tr>
@@ -30,7 +31,8 @@
                 <td>@Html.DisplayFor(modelItem => item.Cpf)</td>
                 <td>@Html.DisplayFor(modelItem => item.Rg)</td>
                 <td>@Html.DisplayFor(modelItem => item.DataNascimento)</td>
-                <td>@Html.DisplayFor(modelItem => item.Sexo)</td>
+                <td>@Formatos.Sexo(item.Sexo)</td>
+                <td>@item.IdCidadeNavigation?.Nome</td>
                 <td>@Html.DisplayFor(modelItem => item.TelCelular)</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.IdPaciente">Editar</a> |

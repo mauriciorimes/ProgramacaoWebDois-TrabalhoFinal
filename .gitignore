@@ -1,0 +1,13 @@
+# Pastas de build do .NET
+[Bb]in/
+[Oo]bj/
+
+# Pasta do Visual Studio (causa o erro de "Permission denied" no git add)
+.vs/
+
+# Arquivos de usuário do Visual Studio
+*.user
+*.suo
+
+# Logs
+*.log

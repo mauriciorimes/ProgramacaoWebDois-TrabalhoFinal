@@ -1,0 +1,48 @@
+@* Maurício Rimes Vieira *@
+@model Projeto1_IF.Models.TbProfissional
+
+@{
+    ViewData["Title"] = "Excluir Profissional";
+    int qtdPacientes = ViewBag.QtdPacientes ?? 0;
+}
+
+<h1>Excluir Profissional</h1>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<h3>Tem certeza que deseja excluir este profissional?</h3>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nome)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Cpf)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Cpf)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CrmCrn)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.CrmCrn)</dd>
+
+    <dt class="col-sm-3">Pacientes vinculados</dt>
+    <dd class="col-sm-9">@qtdPacientes</dd>
+</dl>
+
+<form asp-action="Delete" asp-route-id="@Model.IdProfissional">
+    @if (qtdPacientes > 0)
+    {
+        <div class="alert alert-warning">
+            Este profissional possui <strong>@qtdPacientes</strong> paciente(s).
+            A exclusão só é permitida sem pacientes. Para removê-lo mesmo assim,
+            marque a opção abaixo — os pacientes dos quais ele é o <em>único</em> profissional
+            também serão excluídos (deleção em cascata).
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="cascata" value="true" id="cascata" />
+            <label class="form-check-label" for="cascata">
+                Confirmo a exclusão em cascata dos pacientes exclusivos deste profissional.
+            </label>
+        </div>
+    }
+
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-link">Voltar à Lista</a>
+</form>
